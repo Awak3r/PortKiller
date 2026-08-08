@@ -1,7 +1,10 @@
 package main
 
-import "PortKiller/parser"
-
+import (
+    "PortKiller/parser"
+    "PortKiller/utils"
+)
 func main() {
-    parser.ArgParse()
+    p := utils.Collect()
+    parser.ArgParse(p)
 }

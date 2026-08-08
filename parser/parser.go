@@ -4,17 +4,16 @@ import (
     "flag"
     "fmt"
     "os"
-
+    "PortKiller/utils"
     "PortKiller/commands"
     "PortKiller/internal/version"
 )
 
-func ArgParse() {
+func ArgParse(proc []utils.ProcessInfo) {
     if len(os.Args) < 2 {
-        commands.PrintUsage()
+        fmt.Println("run with --help for usage")
         return
     }
-
     switch os.Args[1] {
     case "--version", "-v", "version":
         fmt.Println(version.Full())
@@ -30,11 +29,11 @@ func ArgParse() {
 
         switch {
         case *name != "":
-            commands.ListByName(*name)
+            commands.ListByName(*name, proc)
         case *port != 0:
-            commands.ListByPort(*port)
+            commands.ListByPort(*port, proc)
         default:
-            commands.ListAll()
+            commands.ListAll(proc)
         }
 
     case "kill":
@@ -45,9 +44,15 @@ func ArgParse() {
 
         switch {
         case *name != "":
-            commands.KillByName(*name)
+            res := commands.KillByName(*name, proc)
+            if (res == false) {
+                fmt.Println("Не удалось завершить процесс")
+            }
         case *port != 0:
-            commands.KillByPort(*port)
+            res := commands.KillByPort(*port, proc)
+            if (res == false) {
+                fmt.Println("Не удалось завершить процесс")
+            }
         default:
             fmt.Println("укажи -name или -port")
         }
