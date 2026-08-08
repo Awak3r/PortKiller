@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 	"text/tabwriter"
-	"PortKiller/utils"
+	"github.com/Awak3r/PortKiller/utils"
 )
 
 func printTable(p []utils.ProcessInfo) {

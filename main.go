@@ -1,8 +1,8 @@
 package main
 
 import (
-    "PortKiller/parser"
-    "PortKiller/utils"
+    "github.com/Awak3r/PortKiller/parser"
+    "github.com/Awak3r/PortKiller/utils"
 )
 func main() {
     p := utils.Collect()

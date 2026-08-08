@@ -1,4 +1,4 @@
-module PortKiller
+module github.com/Awak3r/PortKiller
 
 go 1.26.5
 

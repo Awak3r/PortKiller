@@ -4,9 +4,9 @@ import (
     "flag"
     "fmt"
     "os"
-    "PortKiller/utils"
-    "PortKiller/commands"
-    "PortKiller/internal/version"
+    "github.com/Awak3r/PortKiller/utils"
+    "github.com/Awak3r/PortKiller/commands"
+    "github.com/Awak3r/PortKiller/internal/version"
 )
 
 func ArgParse(proc []utils.ProcessInfo) {

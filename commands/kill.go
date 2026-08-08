@@ -2,7 +2,7 @@ package commands
 
 import (
 	"strings"
-	"PortKiller/utils"
+	"github.com/Awak3r/PortKiller/utils"
 )
 
 func KillByName(name string, p []utils.ProcessInfo) bool {
